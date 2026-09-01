@@ -53,16 +53,14 @@
   }
 
   .identity .mark{
-    width: 44px;
-    height: 44px;
+    width: 72px;
+    height: 72px;
     border-radius: 50%;
+    display: block;
+    object-fit: cover;
     background: var(--pine);
-    color: var(--bg);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    font-family: 'Fraunces', serif;
-    font-size: 16px;
+    border: 2px solid var(--surface);
+    box-shadow: 0 0 0 1px var(--line);
     margin-bottom: 28px;
   }
 
@@ -267,7 +265,7 @@
 <div class="layout">
 
   <aside class="identity">
-    <div class="mark">SA</div>
+    <img class="mark" src="headshot.png" alt="Solomon Ashagre">
     <h1>Solomon Ashagre</h1>
     <p class="role">MERN Stack Developer &amp; Tech Educator</p>
     <p class="location">Addis Ababa, Ethiopia</p>
