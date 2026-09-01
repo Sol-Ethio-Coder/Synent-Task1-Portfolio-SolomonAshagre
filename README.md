@@ -5,8 +5,7 @@ This is my first task for my remote internship at **Synent Technologies**.
 
 ## Live Demo
 
-_Add your Vercel URL here once deployed, e.g._
-`https://solomon-portfolio.vercel.app`
+https://sol-personal-portfolio.vercel.app
 
 ## About
 
