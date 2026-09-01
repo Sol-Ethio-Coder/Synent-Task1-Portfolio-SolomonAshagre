@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Solomon Ashagre — MERN Stack Developer</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg: #F2F4F3;
+    --surface: #FFFFFF;
+    --ink: #1B2A28;
+    --ink-soft: #4B5B58;
+    --pine: #25423C;
+    --ochre: #C97B4A;
+    --line: #D8DED9;
+    --max: 640px;
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--pine); }
+
+  .layout{
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    max-width: 980px;
+    margin: 0 auto;
+    padding: 72px 32px 96px;
+    gap: 48px;
+  }
+
+  /* ---- Sticky identity column ---- */
+  .identity{
+    align-self: start;
+    position: sticky;
+    top: 72px;
+  }
+
+  .identity .mark{
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    background: var(--pine);
+    color: var(--bg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: 'Fraunces', serif;
+    font-size: 16px;
+    margin-bottom: 28px;
+  }
+
+  .identity h1{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 28px;
+    line-height: 1.2;
+    margin: 0 0 6px;
+    letter-spacing: -0.01em;
+  }
+
+  .identity .role{
+    color: var(--ochre);
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: 0 0 6px;
+  }
+
+  .identity .location{
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin: 0 0 24px;
+  }
+
+  .identity nav{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 14px;
+  }
+
+  .identity nav a{
+    color: var(--ink-soft);
+    text-decoration: none;
+    border-left: 2px solid transparent;
+    padding-left: 12px;
+    transition: border-color .15s ease, color .15s ease;
+  }
+
+  .identity nav a:hover{
+    color: var(--pine);
+    border-left-color: var(--ochre);
+  }
+
+  /* ---- Main content ---- */
+  main{ max-width: var(--max); }
+
+  section{
+    padding-bottom: 52px;
+    margin-bottom: 52px;
+    border-bottom: 1px solid var(--line);
+  }
+
+  section:last-child{
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+
+  section h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 22px;
+    margin: 0 0 18px;
+  }
+
+  .intro{
+    font-size: 17px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  #about p{
+    font-size: 15.5px;
+    color: var(--ink-soft);
+    margin: 0 0 14px;
+  }
+  #about p:last-child{ margin-bottom: 0; }
+
+  /* ---- Skills ---- */
+  .skill-group{ margin-bottom: 22px; }
+  .skill-group:last-child{ margin-bottom: 0; }
+
+  .skill-group h3{
+    font-size: 12.5px;
+    font-weight: 600;
+    color: var(--ochre);
+    margin: 0 0 10px;
+  }
+
+  .skill-row{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px 10px;
+  }
+
+  .skill-row span{
+    font-size: 13.5px;
+    color: var(--ink);
+    background: var(--surface);
+    border: 1px solid var(--line);
+    padding: 6px 12px;
+    border-radius: 3px;
+  }
+
+  /* ---- Experience & Education ---- */
+  .entry{
+    display: grid;
+    grid-template-columns: 108px 1fr;
+    gap: 18px;
+    margin-bottom: 26px;
+  }
+  .entry:last-child{ margin-bottom: 0; }
+
+  .entry .when{
+    font-size: 12.5px;
+    color: var(--ink-soft);
+    padding-top: 3px;
+  }
+
+  .entry .what h3{
+    font-size: 15.5px;
+    font-weight: 600;
+    margin: 0 0 2px;
+  }
+
+  .entry .what .org{
+    font-size: 13.5px;
+    color: var(--ochre);
+    margin: 0 0 8px;
+  }
+
+  .entry .what p{
+    font-size: 14.5px;
+    color: var(--ink-soft);
+    margin: 0;
+  }
+
+  /* ---- Contact ---- */
+  .contact-list{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .contact-list li{
+    display: flex;
+    gap: 14px;
+    font-size: 15px;
+    align-items: baseline;
+  }
+
+  .contact-list .label{
+    color: var(--ink-soft);
+    min-width: 70px;
+    font-size: 13px;
+  }
+
+  .contact-list a{
+    text-decoration: none;
+    border-bottom: 1px solid var(--line);
+  }
+  .contact-list a:hover{ border-bottom-color: var(--ochre); }
+
+  footer{
+    max-width: var(--max);
+    grid-column: 2;
+    color: var(--ink-soft);
+    font-size: 13px;
+    margin-top: -24px;
+  }
+
+  /* ---- Responsive ---- */
+  @media (max-width: 720px){
+    .layout{
+      grid-template-columns: 1fr;
+      padding: 48px 24px 72px;
+      gap: 40px;
+    }
+    .identity{ position: static; }
+    .identity nav{ flex-direction: row; flex-wrap: wrap; gap: 16px; }
+    .entry{ grid-template-columns: 1fr; gap: 4px; }
+    footer{ grid-column: 1; }
+  }
+
+  :focus-visible{
+    outline: 2px solid var(--ochre);
+    outline-offset: 2px;
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="layout">
+
+  <aside class="identity">
+    <div class="mark">SA</div>
+    <h1>Solomon Ashagre</h1>
+    <p class="role">MERN Stack Developer &amp; Tech Educator</p>
+    <p class="location">Addis Ababa, Ethiopia</p>
+    <nav>
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#experience">Experience</a>
+      <a href="#education">Education</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </aside>
+
+  <main>
+
+    <section id="header">
+      <p class="intro">
+        A Computer Science graduate from Addis Ababa University who builds
+        robust, user-friendly web applications with the MERN stack &mdash;
+        and spends the rest of the time teaching others to do the same.
+      </p>
+    </section>
+
+    <section id="about">
+      <h2>About Me</h2>
+      <p>
+        I'm a dedicated MERN Stack Developer and Computer Science graduate
+        from Addis Ababa University, specializing in building robust,
+        user-friendly web applications. I'm proficient in modern
+        JavaScript frameworks and enjoy turning complex problems into
+        clean, high-quality digital solutions through close cross-team
+        collaboration.
+      </p>
+      <p>
+        Alongside development work, I teach ICT at an international
+        school and tutor part-time &mdash; which has sharpened how I
+        explain technical ideas clearly, whether to a teammate, a
+        student, or a client.
+      </p>
+    </section>
+
+    <section id="skills">
+      <h2>Skills</h2>
+
+      <div class="skill-group">
+        <h3>Languages</h3>
+        <div class="skill-row">
+          <span>JavaScript</span>
+          <span>Python</span>
+          <span>HTML &amp; CSS</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Stack &amp; Tools</h3>
+        <div class="skill-row">
+          <span>MongoDB</span>
+          <span>Express.js</span>
+          <span>React.js</span>
+          <span>Node.js</span>
+          <span>WordPress</span>
+          <span>Linux</span>
+        </div>
+      </div>
+
+      <div class="skill-group">
+        <h3>Professional</h3>
+        <div class="skill-row">
+          <span>Problem Solving</span>
+          <span>Communication</span>
+          <span>Time Management</span>
+          <span>Curriculum Development</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="experience">
+      <h2>Experience</h2>
+
+      <div class="entry">
+        <div class="when">Aug&nbsp;2025 &ndash; Sep&nbsp;2025</div>
+        <div class="what">
+          <h3>Web Development Internship</h3>
+          <p class="org">Codveda Technologies &middot; Remote</p>
+          <p>Used the full MERN stack (MongoDB, Express.js, React.js, Node.js) to develop and deploy dynamic, responsive web applications.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Jan&nbsp;2025 &ndash; Present</div>
+        <div class="what">
+          <h3>Computing Teacher</h3>
+          <p class="org">Trillium International School</p>
+          <p>Teach ICT within a Cambridge curriculum, developing skills in curriculum design, differentiated instruction, and adapting technical concepts for diverse learners.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Sep&nbsp;2023 &ndash; Nov&nbsp;2024</div>
+        <div class="what">
+          <h3>IT Teacher</h3>
+          <p class="org">Montessorian School</p>
+          <p>Served as ICT Teacher and Officer, focused on making technical concepts practical and accessible to students.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Aug&nbsp;2023 &ndash; Oct&nbsp;2023</div>
+        <div class="what">
+          <h3>Web Developer using WordPress</h3>
+          <p class="org">KNS Trading plc &middot; Voluntary</p>
+          <p>Completed a web development internship building websites using WordPress.</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Jul&nbsp;2024 &ndash; Present</div>
+        <div class="what">
+          <h3>Tutor</h3>
+          <p class="org">Sewawi Tutor &middot; Part-Time</p>
+          <p>Tutor students part-time, drawing on a background as an IT teacher to support learners with technical concepts.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="education">
+      <h2>Education</h2>
+
+      <div class="entry">
+        <div class="when">Jan&nbsp;2019 &ndash; Oct&nbsp;2024</div>
+        <div class="what">
+          <h3>BSc in Computer Science</h3>
+          <p class="org">Addis Ababa University</p>
+        </div>
+      </div>
+
+      <div class="entry">
+        <div class="when">Sep&nbsp;2016 &ndash; Jun&nbsp;2018</div>
+        <div class="what">
+          <h3>Natural Science</h3>
+          <p class="org">Fasiledes High School and Preparatory School</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <h2>Contact</h2>
+      <ul class="contact-list">
+        <li><span class="label">Phone</span> <a href="tel:+251901436358">+251 901 436 358</a></li>
+        <li><span class="label">Email</span> <a href="mailto:solash5156@gmail.com">solash5156@gmail.com</a></li>
+        <li><span class="label">GitHub</span> <a href="https://github.com/Sol-Ethio-Coder" target="_blank" rel="noopener">github.com/Sol-Ethio-Coder</a></li>
+        <li><span class="label">LinkedIn</span> <a href="https://www.linkedin.com/in/sol-ethio-coder/" target="_blank" rel="noopener">linkedin.com/in/sol-ethio-coder</a></li>
+        <li><span class="label">Instagram</span> <a href="https://www.instagram.com/sol_ethio_coder/" target="_blank" rel="noopener">@sol_ethio_coder</a></li>
+      </ul>
+    </section>
+
+  </main>
+
+  <footer>&copy; 2026 Solomon Ashagre. Addis Ababa, Ethiopia.</footer>
+
+</div>
+
+</body>
+</html>
